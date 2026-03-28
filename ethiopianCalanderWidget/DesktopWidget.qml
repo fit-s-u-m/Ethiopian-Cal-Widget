@@ -9,11 +9,6 @@ DraggableDesktopWidget {
 
   property var pluginApi: null
 
-  readonly property string message:
-    pluginApi?.pluginSettings?.message ||
-    pluginApi?.manifest?.metadata?.defaultSettings?.message ||
-    "Hello World"
-
   // Scale dimensions by widgetScale
   implicitWidth: Math.round(200 * widgetScale)
   implicitHeight: Math.round(120 * widgetScale)
@@ -25,23 +20,16 @@ DraggableDesktopWidget {
     anchors.margins: Math.round(Style.marginL * widgetScale)
     spacing: Math.round(Style.marginS * widgetScale)
 
-    NIcon {
-      icon: "noctalia"
-      pointSize: Math.round(Style.fontSizeXXL * widgetScale)
-      Layout.alignment: Qt.AlignHCenter
-    }
-
     NText {
-      text: root.message
+      text: "Hello"
       pointSize: Math.round(Style.fontSizeM * widgetScale)
       Layout.alignment: Qt.AlignHCenter
     }
-
-    NText {
-      text: "Desktop Widget"
-      pointSize: Math.round(Style.fontSizeS * widgetScale)
-      color: Color.mOnSurfaceVariant
-      Layout.alignment: Qt.AlignHCenter
+    Rectangle {
+      width: 100
+      height: 100
+      radius: width / 2
+      color: "red"
     }
   }
 }
