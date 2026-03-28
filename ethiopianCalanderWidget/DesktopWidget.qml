@@ -14,7 +14,6 @@ DraggableDesktopWidget {
   implicitHeight: Math.round(120 * widgetScale)
   width: implicitWidth
   height: implicitHeight
-  radius: Math.min(root.width, root.height) / 2
 
   ColumnLayout {
     anchors.fill: parent
@@ -22,9 +21,9 @@ DraggableDesktopWidget {
     spacing: Math.round(Style.marginS * widgetScale)
 
     Rectangle {
-      width: root.radius*2
-      height: root.radius*2
-      radius: radius
+      width:  Math.min(root.width, root.height) 
+      height: Math.min(root.width, root.height)
+      radius: Math.min(root.width, root.height) / 2
       color: "red"
     }
   }
