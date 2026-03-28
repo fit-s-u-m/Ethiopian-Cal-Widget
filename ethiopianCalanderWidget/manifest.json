@@ -11,5 +11,5 @@
   ],
   "entryPoints": {
     "desktopWidget": "DesktopWidget.qml"
-  },
+  }
 }
