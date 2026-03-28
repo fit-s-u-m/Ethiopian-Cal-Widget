@@ -14,21 +14,17 @@ DraggableDesktopWidget {
   implicitHeight: Math.round(120 * widgetScale)
   width: implicitWidth
   height: implicitHeight
+  radius: Math.min(root.width, root.height) / 2
 
   ColumnLayout {
     anchors.fill: parent
     anchors.margins: Math.round(Style.marginL * widgetScale)
     spacing: Math.round(Style.marginS * widgetScale)
 
-    NText {
-      text: "Hello"
-      pointSize: Math.round(Style.fontSizeM * widgetScale)
-      Layout.alignment: Qt.AlignHCenter
-    }
     Rectangle {
-      width: 100
-      height: 100
-      radius: width / 2
+      width: root.radius*2
+      height: root.radius*2
+      radius: radius
       color: "red"
     }
   }
