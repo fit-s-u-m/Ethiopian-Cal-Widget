@@ -7,7 +7,7 @@
   "description": "Fancy Ethiopian Calander on your desktop",
   "repository": "https://github.com/fit-s-u-m/Ethiopian-Cal-Widget",
   "tags": [
-    "Desktop",
+    "Desktop"
   ],
   "entryPoints": {
     "desktopWidget": "DesktopWidget.qml"
