@@ -1,15 +1,16 @@
 {
   "id": "ethiopianCalanderWidget",
   "name": "Ethiopian Calander",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Fitsum W",
-  "official": true,
   "license": "MIT",
   "description": "Fancy Ethiopian Calander on your desktop",
+  "repository": "https://github.com/fit-s-u-m/Ethiopian-Cal-Widget",
   "tags": [
-    "Desktop",
+    "Desktop"
   ],
   "entryPoints": {
-    "desktopWidget": "DesktopWidget.qml"
-  },
+    "desktopWidget": "DesktopWidget.qml",
+    "desktopSettings": "DesktopSetting.qml"
+  }
 }
