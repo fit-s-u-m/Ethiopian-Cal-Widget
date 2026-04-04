@@ -6,7 +6,6 @@ import qs.Widgets
 
 DraggableDesktopWidget {
   id: root
-
   property var pluginApi: null
 
   // Scale dimensions by widgetScale
@@ -14,7 +13,6 @@ DraggableDesktopWidget {
   implicitHeight: Math.round(120 * widgetScale)
   width: implicitWidth
   height: implicitHeight
-  property var widgetSettings: null
 
   property color primaryColor: widgetSettings?.data?.primaryColor ?? "green"
 
@@ -35,6 +33,7 @@ DraggableDesktopWidget {
   property real minuteProgress: (new Date().getMinutes() + new Date().getSeconds()/60)/60
   property real hourProgress:(new Date().getHours() + new Date().getMinutes()/60)/24 
   property real baseFontSize: root.circleSize / 25
+  showBackground: false
   Canvas {
       id: ethioCal
       width: root.circleSize
