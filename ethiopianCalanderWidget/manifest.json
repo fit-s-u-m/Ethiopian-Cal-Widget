@@ -11,6 +11,12 @@
   ],
   "entryPoints": {
     "desktopWidget": "DesktopWidget.qml",
-    "desktopSettings": "DesktopSetting.qml"
+    "desktopWidgetSettings": "DesktopWidgetSettings.qml"
+  },
+  "metadata": {
+    "defaultSettings": {
+      "primaryColor": "#00FF00",
+      "fontScale": 1.0
+    }
   }
 }

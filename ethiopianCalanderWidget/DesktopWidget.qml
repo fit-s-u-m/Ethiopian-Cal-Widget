@@ -14,25 +14,24 @@ DraggableDesktopWidget {
   width: implicitWidth
   height: implicitHeight
 
-  property color primaryColor: widgetSettings?.data?.primaryColor ?? "green"
+  property color primaryColor:    Qt.color(widgetData?.primaryColor ?? "green")
+  property color secondaryColor:  Qt.color(widgetData?.secondaryColor ?? "white")
+  property color highlightColor:  Qt.color(widgetData?.highlightColor ?? "red")
+  property color minuteArcColor:  Qt.color(widgetData?.minuteArcColor ?? "yellow")
+  property color hourArcColor:    Qt.color(widgetData?.hourArcColor ?? "green")
 
-  property color secondaryColor: widgetSettings?.data?.secondaryColor ?? "white"
-
-  property color highlightColor: widgetSettings?.data?.highlightColor ?? "red"
-
-  property color minuteArcColor: widgetSettings?.data?.minuteArcColor ?? "yellow"
-
-  property color hourArcColor: widgetSettings?.data?.hourArcColor ?? "green"
-
-  property string fontFamily: widgetSettings?.data?.fontFamily ?? "sans-serif"
-
-  property real fontScale: widgetSettings?.data?.fontScale ?? 1.0
+  property string fontFamily: widgetData?.fontFamily ?? "sans-serif"
+  property real fontScale:    widgetData?.fontScale ?? 1.0
 
   property real circleSize: Math.min(root.width > 0 ? root.width : implicitWidth,
                                        root.height > 0 ? root.height : implicitHeight)
   property real minuteProgress: (new Date().getMinutes() + new Date().getSeconds()/60)/60
   property real hourProgress:(new Date().getHours() + new Date().getMinutes()/60)/24 
   property real baseFontSize: root.circleSize / 25
+
+  property real n : 28
+  property  real spacing : ( 2 * Math.PI ) / root.n
+
   showBackground: false
   Canvas {
       id: ethioCal
@@ -45,8 +44,6 @@ DraggableDesktopWidget {
           ctx.reset()
           ctx.clearRect(0, 0, width, height)
 
-          const n = 28
-          const spacing = (2*Math.PI) / n
 
           const months = ["ታህሳስ-ሐምሌ", "መጋቢት", "ህዳር-ሰኔ", "የካቲት-ጳግሜ", "ጥቅምት-ግንቦት", "ጥር-ነሐሴ", "መስከረም-ሚያዝያ"]
           const allMeris = ["ዘ", "መ", "ን", "በ", "ሀ", "ገ", "ሬ"]
@@ -73,7 +70,7 @@ DraggableDesktopWidget {
 
 
           const merikalindex = allMeris.findIndex(meri => meri == thisYearMeriKal)
-          const baseRotationForMeriKals = -13
+          const baseRotationForMeriKals = - 13
           const monthIndexRev = months.length - 1 - monthIndex
           const yearIndexRotation = baseRotationForMeriKals + merikalindex + monthIndexRev;
 
@@ -138,8 +135,6 @@ DraggableDesktopWidget {
 
             ctx.restore() 
           }
-
-
           // small arcs for weeek text
 
           for(let i =0; i<n; i++){
@@ -290,7 +285,7 @@ DraggableDesktopWidget {
     }
   }
   Connections {
-    target: widgetSettings
+    target: widgetData
 
     function onDataChanged() {
         ethioCal.requestPaint()
