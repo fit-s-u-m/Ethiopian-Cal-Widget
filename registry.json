@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "id": "ethiopianCalanderWidget",
+      "name": "Ethiopian Cal",
+      "version": "1.1.0",
+      "official": false,
+      "author": "Fitsum w",
+      "description": "test",
+      "repository": "https://github.com/fit-s-u-m/Ethiopian-Cal-Widget",
+      "license": "MIT",
+      "tags": [
+        "Desktop"
+      ]
+    }
+  ]
+}
