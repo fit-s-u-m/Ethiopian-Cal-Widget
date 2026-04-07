@@ -30,7 +30,7 @@ This widget was inspired by the following beautiful design:
 1. Clone or download this repository:
 
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/fit-s-u-m/Ethiopian-Cal-Widget.git
    ```
 
 2. Move the widget to your Noctalia widgets directory:
