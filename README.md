@@ -24,7 +24,9 @@ This widget was inspired by the following beautiful design:
 (![Inspiration Image](https://github.com/user-attachments/assets/e474958f-ef42-4b46-bcfc-b66fa44b2229)
 
 ---
+To check how it works you can interactively see it on this [url](https://fit-s-u-m.github.io/EthiopianCal)
 
+---
 ## 🚀 Installation
 
 1. Clone or download this repository:
